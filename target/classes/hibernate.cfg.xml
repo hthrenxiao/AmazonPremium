@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+
+		<property name="hibernate.dialect">
+		   org.hibernate.dialect.MySQLDialect
+		</property>
+		
+		<property name="hibernate.connection.driver_class">
+		   com.mysql.jdbc.Driver
+		</property>
+		
+		<!-- Please make sure that you have a database named "amazon" in your local MySQL -->
+		<property name="hibernate.connection.url">
+		   jdbc:mysql://localhost/amazon
+		</property>
+		
+		<property name="hibernate.connection.username">
+		   root
+		</property>
+		
+		<!-- Please reset your password to be the same to avoid continuously modifying this property.  -->
+		<property name="hibernate.connection.password">
+	      root
+		</property>
+	
+		<!-- List of XML mapping files -->
+		<mapping resource="Employee.hbm.xml"/>
+		<mapping resource="Certificate.hbm.xml"/>
+	
+	</session-factory>
+</hibernate-configuration>
