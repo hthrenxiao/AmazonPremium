@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping>
+ 	<class name="com.amazonpremium.Category" table = "category">
+ 		<meta attribute="class-description">This class contains the category details.</meta>
+		<id name="id" column="cid"><generator class="native" /></id>
+		<set name="goods" cascade="all">
+			<key column="cid" />
+			<one-to-many class="com.amazonpremium.dao.Good" />
+		</set>
+		<property name="name" column="cname" />
+ 	</class>
+ </hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+ <hibernate-mapping>
+ 	<class name="com.amazonpremium.dao.Good" table="goods">
+ 		<meta attribute="class-description">This class contains the good records.</meta>
+ 		<id name="id" column="gid"><generator class="native" /></id>
+		<property name="name" column="gname" />
+		<property name="desc" column="gdesc" />
+		<property name="stock" column="gstocks" />
+		<property name="price" column="gprice" />
+ 	</class>
+ </hibernate-mapping>
+ 
+
+ 

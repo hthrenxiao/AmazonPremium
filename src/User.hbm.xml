@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+	<class name="com.amazonpremium.dao.User" table = "users">
+		<meta attribute="class-description">This class contains the user details.</meta>
+		<id name="id" column="uid"><generator class="native" /></id>
+		<set name="wishinglist" cascade="all" table="wishinglist">
+			<key column="uid" />
+			<many-to-many column="gid" class="com.amazonpremium.dao.Good" />
+		</set>
+		<property name="username" column="username" />
+		<property name="password" column="upassword" />
+		<property name="birthday" column="ubirthday" />
+		<property name="rdate" column="uregistereddate" />
+		<property name="balance" column="ubalance" />
+	</class>
+</hibernate-mapping>
