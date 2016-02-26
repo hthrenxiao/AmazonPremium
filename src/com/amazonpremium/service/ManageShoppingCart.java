@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -12,13 +14,18 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.amazonpremium.dao.ShoppingCartDAO;
 import com.amazonpremium.model.Good;
 import com.amazonpremium.model.ShoppingCart;
-
+@Service
 public class ManageShoppingCart implements ShoppingCartDAO{
 
+	//Next stage factory will automatically inject by using spring framework.
+	@Autowired
 	private static SessionFactory factory = new Configuration().configure().buildSessionFactory();
 	
 	@Override
@@ -67,6 +74,7 @@ public class ManageShoppingCart implements ShoppingCartDAO{
 		Transaction tx = null;
 		try {
 			tx = session.beginTransaction();
+			
 			Criteria cr = session.createCriteria(Good.class);
 			cr.add(Restrictions.eq("id", id));
 			List goods = cr.list();
