@@ -5,12 +5,12 @@
  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
  
 <hibernate-mapping>
-	<class name="com.amazonpremium.dao.User" table = "users">
+	<class name="com.amazonpremium.model.User" table = "users">
 		<meta attribute="class-description">This class contains the user details.</meta>
 		<id name="id" column="uid"><generator class="native" /></id>
 		<set name="wishinglist" cascade="all" table="wishinglist">
 			<key column="uid" />
-			<many-to-many column="gid" class="com.amazonpremium.dao.Good" />
+			<many-to-many column="gid" class="com.amazonpremium.model.Good" />
 		</set>
 		<property name="username" column="username" />
 		<property name="password" column="upassword" />
