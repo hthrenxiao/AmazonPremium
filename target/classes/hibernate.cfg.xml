@@ -28,9 +28,7 @@
 	      root
 		</property>
 	
-		<!-- List of XML mapping files -->
-		<mapping resource="Employee.hbm.xml"/>
-		<mapping resource="Certificate.hbm.xml"/>
+	 
 	
 	</session-factory>
 </hibernate-configuration>
