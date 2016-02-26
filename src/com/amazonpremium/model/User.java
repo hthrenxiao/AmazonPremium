@@ -1,4 +1,4 @@
-package com.amazonpremium.dao;
+package com.amazonpremium.model;
 
 import java.math.BigDecimal;
 import java.util.Date;

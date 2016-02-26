@@ -5,7 +5,7 @@
  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
  
  <hibernate-mapping>
- 	<class name="com.amazonpremium.Category" table = "category">
+ 	<class name="com.amazonpremium.dao.Category" table = "category">
  		<meta attribute="class-description">This class contains the category details.</meta>
 		<id name="id" column="cid"><generator class="native" /></id>
 		<set name="goods" cascade="all">
