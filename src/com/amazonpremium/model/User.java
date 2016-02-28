@@ -2,6 +2,7 @@ package com.amazonpremium.model;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Set;
 
 public class User {
 	
@@ -11,7 +12,7 @@ public class User {
 	private Date birthday;
 	private Date rdate;
 	private BigDecimal balance;
-	
+	private Set wishingList;
 	/**
 	 * 
 	 */
@@ -115,6 +116,20 @@ public class User {
 	 */
 	public void setBalance(BigDecimal balance) {
 		this.balance = balance;
+	}
+
+	/**
+	 * @return the wishingList
+	 */
+	public Set getWishingList() {
+		return wishingList;
+	}
+
+	/**
+	 * @param wishingList the wishingList to set
+	 */
+	public void setWishingList(Set wishingList) {
+		this.wishingList = wishingList;
 	}
 	
 	

@@ -32,19 +32,7 @@ public class ManageShoppingCart implements ShoppingCartDAO{
 	//Next stage factory will automatically inject by using spring framework.
 	
 	private static SessionFactory factory;
-	
-    
-	public static void main(String[] args) {
-		Session session = factory.openSession();
-		Transaction s = session.beginTransaction();
 		
-		TestBean tb = new TestBean(12,"hshsh");
-		session.save(tb);
-		
-		s.commit();
-		session.close();
-	}
-	
 	@Override
 	public void addGood(ShoppingCart cart, int id, int number) {
 		// TODO Auto-generated method stub
