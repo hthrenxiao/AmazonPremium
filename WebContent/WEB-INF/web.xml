@@ -7,27 +7,20 @@
     <welcome-file>index.jsp</welcome-file>
  
   </welcome-file-list>
-  
-  
-	  <context-param>
-	    <param-name>contextConfigLocation</param-name>
-	    <param-value>classpath:/spring-*.xml</param-value>
-	  </context-param>
-
-
+ 
     <!-- spring configuration -->
 	<servlet>
-		<servlet-name>spring</servlet-name>
+		<servlet-name>mvc</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		 <init-param>
 	     <param-name>contextConfigLocation</param-name>
-	     <param-value>classpath:/amazon-dispatcher-servlet.xml</param-value>
+	     <param-value>classpath:/mvc-servlet.xml</param-value>
     </init-param>
 		
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>spring</servlet-name>
+		<servlet-name>mvc</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	

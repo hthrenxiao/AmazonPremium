@@ -15,22 +15,40 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.amazonpremium.dao.ShoppingCartDAO;
+import com.amazonpremium.dao.TestBean;
 import com.amazonpremium.model.Good;
 import com.amazonpremium.model.ShoppingCart;
+
 @Service
+@RequestMapping(name="/")
 public class ManageShoppingCart implements ShoppingCartDAO{
 
 	//Next stage factory will automatically inject by using spring framework.
-	@Autowired
-	private static SessionFactory factory = new Configuration().configure().buildSessionFactory();
+	
+	private static SessionFactory factory;
+	
+    
+	public static void main(String[] args) {
+		Session session = factory.openSession();
+		Transaction s = session.beginTransaction();
+		
+		TestBean tb = new TestBean(12,"hshsh");
+		session.save(tb);
+		
+		s.commit();
+		session.close();
+	}
 	
 	@Override
 	public void addGood(ShoppingCart cart, int id, int number) {
 		// TODO Auto-generated method stub
+			
 		Session session = factory.openSession();
 		Transaction tx = null;
 		boolean existed = false;
