@@ -12,7 +12,7 @@ public class User {
 	private Date birthday;
 	private Date rdate;
 	private BigDecimal balance;
-	private Set wishingList;
+	private Set wishinglist;
 	/**
 	 * 
 	 */
@@ -122,14 +122,14 @@ public class User {
 	 * @return the wishingList
 	 */
 	public Set getWishingList() {
-		return wishingList;
+		return wishinglist;
 	}
 
 	/**
 	 * @param wishingList the wishingList to set
 	 */
 	public void setWishingList(Set wishingList) {
-		this.wishingList = wishingList;
+		this.wishinglist = wishingList;
 	}
 	
 	

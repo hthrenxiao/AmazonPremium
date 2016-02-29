@@ -50,7 +50,8 @@
 		        <list>
 		            <value>com/amazonpremium/model/Good.hbm.xml</value>
 		            <value>com/amazonpremium/model/TestBean.hbm.xml</value>
-		            <value>com/amazonpremium/model/Category.hbm.xml</value>            
+		            <value>com/amazonpremium/model/Category.hbm.xml</value>
+		            <value>com/amazonpremium/model/User.hbm.xml</value>            
 		        </list>
 		    </property> 
   	  </bean>

@@ -114,6 +114,8 @@ public class ManageShoppingCart implements ShoppingCartDAO{
 	public void dumpCart(ShoppingCart cart) {
 		// TODO Auto-generated method stub
 		cart.setCart(new HashMap<Good, Integer>());
+		cart.setTotalPrice(new BigDecimal(0));
+		cart.setTotalNumberOfGoods(0);
 	}
 
 }

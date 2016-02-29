@@ -1,5 +1,9 @@
 package com.amazonpremium.dao;
 
-public interface GoodDAO {
+import java.util.ArrayList;
 
+import com.amazonpremium.model.Good;
+
+public interface GoodDAO {
+	public ArrayList<Good> listAllGoods();
 }

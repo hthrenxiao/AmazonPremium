@@ -5,6 +5,6 @@ import com.amazonpremium.model.User;
 public interface UserDAO {
 	
 	public boolean login(String username, String password);
-	public void registration(User newUser);
+	public boolean registration(User newUser);
 	
 }
