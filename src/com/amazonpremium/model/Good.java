@@ -30,6 +30,14 @@ public class Good {
 		this.price = price;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Good [id=" + id + ", name=" + name + ", desc=" + desc + ", stock=" + stock + ", price=" + price + "]";
+	}
+
 	/**
 	 * @return the id
 	 */

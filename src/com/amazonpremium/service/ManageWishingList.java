@@ -20,10 +20,10 @@ import com.amazonpremium.dao.WishingListDAO;
 import com.amazonpremium.model.Good;
 import com.amazonpremium.model.User;
 
-@Service
+//@Service
 public class ManageWishingList implements WishingListDAO{
 
-	@Autowired
+	//@Autowired
 	private static SessionFactory factory = new Configuration().configure().buildSessionFactory();
 	
 	@Override

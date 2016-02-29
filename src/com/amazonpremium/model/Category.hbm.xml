@@ -5,13 +5,20 @@
  "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
  
  <hibernate-mapping>
- 	<class name="com.amazonpremium.model.Category" table = "category" >
+ 	<class name="com.amazonpremium.model.Category" table = "category"  >
  		<meta attribute="class-description">This class contains the category details.</meta>
-		<id name="id" column="cid"><generator class="native" /></id>
-		<set name="goods" cascade="all">
+		<id name="cid">
+			<generator class="native" />
+		</id>
+		<property name="cname"/>
+		
+		<property name="id"></property>
+	
+		<property name="name"></property>
+		
+		<set name="goods" cascade="all" table="goods">
 			<key column="cid" />
 			<one-to-many class="com.amazonpremium.model.Good" />
 		</set>
-		<property name="name" column="cname" />
  	</class>
  </hibernate-mapping>

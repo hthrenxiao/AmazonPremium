@@ -1,26 +1,40 @@
 package com.amazonpremium.controller;
 
+
+import java.util.List;
+
 import javax.annotation.Resource;
 
-import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.amazonpremium.dao.CategoryDaoImpl;
+
 @Controller
 @RequestMapping("/test")
 public class TestController {
 	
-    //Service from service layer
-    @Resource(name="factory")
-    private SessionFactory session;
-    
+//    //Service from service layer
+//	  @Resource(name="factory")
+//    private SessionFactory session;
+	
+	//Warning:Do not new object by yourself, spring framework will automatilly new any thing you want.
+	//Only add @Autowired
+	@Autowired
+	CategoryDaoImpl categoryDaoImpl;
+	
     @RequestMapping(value="/manager",method=RequestMethod.GET)
     public ModelAndView hello2(){
-    	System.out.println(session.getClass());
+    	
+  
+    	List list = categoryDaoImpl.listC();
+     
         ModelAndView mv = new ModelAndView();
-        mv.addObject("message", "HelloMVC");
+        mv.addObject("message", list);
+      //  mv.addObject("bo",bo);
         mv.setViewName("users");
         return mv;
     }
