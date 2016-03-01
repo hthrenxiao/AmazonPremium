@@ -3,19 +3,23 @@ package com.amazonpremium.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.springframework.stereotype.Service;
 
 import com.amazonpremium.dao.GoodDAO;
 import com.amazonpremium.model.Good;
-
+@Service
 public class ManageGoods implements GoodDAO{
 
-	private static SessionFactory factory = new Configuration().configure().buildSessionFactory();
+	@Resource(name="factory")
+	private SessionFactory factory ;
 	
 	@Override
 	public ArrayList<Good> listAllGoods() {

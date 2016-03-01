@@ -8,7 +8,8 @@ public class ShoppingCart {
 	private HashMap<Good, Integer> map;
 	private int totalNumber;
 	private BigDecimal totalPrice;
-	
+
+
 	public ShoppingCart(){
 		map = new HashMap<Good, Integer>();
 		this.totalNumber = 0;

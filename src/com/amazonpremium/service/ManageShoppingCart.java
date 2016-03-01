@@ -26,12 +26,12 @@ import com.amazonpremium.model.Good;
 import com.amazonpremium.model.ShoppingCart;
 
 @Service
-@RequestMapping(name="/")
 public class ManageShoppingCart implements ShoppingCartDAO{
 
 	//Next stage factory will automatically inject by using spring framework.
 	
-	private static SessionFactory factory;
+	@Resource(name="factory")
+	private SessionFactory factory ;
 		
 	@Override
 	public void addGood(ShoppingCart cart, int id, int number) {

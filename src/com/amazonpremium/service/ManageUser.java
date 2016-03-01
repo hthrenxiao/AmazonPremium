@@ -2,6 +2,8 @@ package com.amazonpremium.service;
 
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -9,13 +11,15 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Service;
 
 import com.amazonpremium.dao.UserDAO;
 import com.amazonpremium.model.User;
-
+@Service
 public class ManageUser implements UserDAO{
 
-	private static SessionFactory factory = new Configuration().configure().buildSessionFactory();
+	@Resource(name="factory")
+	private SessionFactory factory ;
 	private static final boolean SUCCESS = true;
 	private static final boolean FAIL = false;
 	

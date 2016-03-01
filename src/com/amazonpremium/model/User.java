@@ -20,6 +20,20 @@ public class User {
 	}
 
 	/**
+	 * @return the wishinglist
+	 */
+	public Set getWishinglist() {
+		return wishinglist;
+	}
+
+	/**
+	 * @param wishinglist the wishinglist to set
+	 */
+	public void setWishinglist(Set wishinglist) {
+		this.wishinglist = wishinglist;
+	}
+
+	/**
 	 * @param username
 	 * @param password
 	 * @param birthday
@@ -118,19 +132,6 @@ public class User {
 		this.balance = balance;
 	}
 
-	/**
-	 * @return the wishingList
-	 */
-	public Set getWishingList() {
-		return wishinglist;
-	}
 
-	/**
-	 * @param wishingList the wishingList to set
-	 */
-	public void setWishingList(Set wishingList) {
-		this.wishinglist = wishingList;
-	}
-	
 	
 }

@@ -6,6 +6,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import javax.annotation.Resource;
+
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -20,11 +22,11 @@ import com.amazonpremium.dao.WishingListDAO;
 import com.amazonpremium.model.Good;
 import com.amazonpremium.model.User;
 
-//@Service
+@Service
 public class ManageWishingList implements WishingListDAO{
 
-	//@Autowired
-	private static SessionFactory factory = new Configuration().configure().buildSessionFactory();
+	@Resource(name="factory")
+	private SessionFactory factory ;
 	
 	@Override
 	public ArrayList<Good> getWishingList(String username) {
@@ -38,7 +40,7 @@ public class ManageWishingList implements WishingListDAO{
 			cr.add(Restrictions.eq("username", username));
 			List users = cr.list();
 			User curUser = (User) users.get(0);
-			Set wishingList = curUser.getWishingList();
+			Set wishingList = curUser.getWishinglist();
 			if(wishingList != null && wishingList.size() != 0){
 				result = new ArrayList<Good>();
 				Iterator it = wishingList.iterator();
@@ -73,7 +75,7 @@ public class ManageWishingList implements WishingListDAO{
 			int uid = tmp.getId();
 			User curUser = session.get(User.class, uid);
 			Good target = session.get(Good.class, id);
-			curUser.getWishingList().add(target);
+			curUser.getWishinglist().add(target);
 			session.update(curUser);
 			tx.commit();
 		} catch (HibernateException he) {
@@ -99,7 +101,7 @@ public class ManageWishingList implements WishingListDAO{
 			User tmp = (User) users.get(0);
 			int uid = tmp.getId();
 			User curUser = session.get(User.class, uid);
-			Iterator it = curUser.getWishingList().iterator();
+			Iterator it = curUser.getWishinglist().iterator();
 			while(it.hasNext()){
 				Good cur = (Good) it.next();
 				if(cur.getId() == id){
@@ -133,7 +135,7 @@ public class ManageWishingList implements WishingListDAO{
 			User tmp = (User) users.get(0);
 			int uid = tmp.getId();
 			User curUser = session.get(User.class, uid);
-			curUser.setWishingList(new HashSet());
+			curUser.setWishinglist(new HashSet());
 			session.update(curUser);
 			tx.commit();
 		} catch (HibernateException he) {

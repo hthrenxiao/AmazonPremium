@@ -1,0 +1,19 @@
+Controller Test url
+Changing {id} by using your database data! 
+**************Category serive function*****************
+
+1,listGoodsOfCategory
+
+http://localhost:8080/AmazonPremium/managecategory/listGoodsOfCategory/{id}
+
+
+2.listCategories
+http://localhost:8080/AmazonPremium/managecategory/listGoodsOfCategory/listall
+
+
+**************Goods service function**********************
+1,listAllGoods
+http://localhost:8080/AmazonPremium/goods/listallgoods/listall
+
+
+************

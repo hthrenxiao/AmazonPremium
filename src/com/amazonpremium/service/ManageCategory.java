@@ -6,21 +6,27 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import javax.annotation.Resource;
+
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 
 import com.amazonpremium.dao.CategoryDAO;
 import com.amazonpremium.model.Category;
 import com.amazonpremium.model.Good;
 
-
+@Service
 public class ManageCategory implements CategoryDAO{
 
-	private static SessionFactory factory = new Configuration().configure().buildSessionFactory();
+	@Resource(name="factory")
+	private SessionFactory factory;
 	
 	@Override
 	public HashMap<Integer, String> listCategories() {
